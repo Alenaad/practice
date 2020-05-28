@@ -1,0 +1,62 @@
+class Course extends Incrementation {
+  - students: ArrayList<Student>
+  - lecturer: Lecturer
+  + Course(name: String)
+  + getStudents(): ArrayList<Student>
+  + addStudent(student: Student)
+  + getLecturer(): Lecturer 
+  + assignLecturer(lecturer: Lecturer):
+}
+
+abstract class Incrementation {  
+  - {static} count: int
+  - id: int 
+  - name: String 
+  + Incrementation(name: String)
+  + getId(): int
+  + getName(): String
+  + toString(): String
+}
+
+class Institution {
+  - name: String
+  - address: String
+  - courses: ArrayList<Course>
+  - students: ArrayList<Student>
+  - lecturers: ArrayList<Lecturer>
+  + Institution(name: String, address: String)
+  + getName(): String
+  + getAddress(): String
+  + getStudents(): ArrayList<Student>
+  + getLecturers(): ArrayList<Lecturer>
+  + getCourses(): ArrayList<Course>
+  + addStudent(student: Student)
+  + addLecturer(lecturer: Lecturer)
+  + addCourse(course: Course)
+  + getLecturer(id: int): Lecturer
+  + getStudent(id: int): Student
+  + getCourse(id: int): Course
+  + lecturerForCourseAssign(lecturer: Lecturer,  course: Course)
+  + studentForCourseAssociate(student: Student,  course: Course)
+}
+
+class Lecturer extends Incrementation {
+  -  course):
+
+: Ste):
+rse>Course> ges(: {
+  + void ddCourse(Course course): {
+    courses.add(course):
+  }
+
+}
+gCseres = new ArraArrayList<Course>ist<>():
+e):  super(nam
+etCourses(): {    return courses
+  }
+
+  + void addCourse(Course course): {
+    courses.add(course):
+  }
+
+}
