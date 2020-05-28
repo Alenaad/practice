@@ -1,0 +1,13 @@
+@startuml
+abstract class Incrementation
+class Student extends Incrementation
+class Course extends Incrementation
+class Lecturer extends Incrementation
+Institution o-up- Student
+Institution o-up- Course
+Institution o-up- Lecturer
+Course -left- Student
+Course -right- Lecturer
+@enduml
+
+Ссылка на диаграмму http://www.plantuml.com/plantuml/png/VSr12W8n30NG_PoY5-WT1bmDkFC4iOrQQ5D9Vi3ZYvIYYnbtuVz7_ceWXRUwqDMWb11I9REmIL9kB22KBii8B_3CWi0liEG3TEgknl_DcHDSMO_K9eO2_zoXHt_6ERtJZBsTOeuiGuHO-ORlfvbgkJ_merUMxAs-0G00
