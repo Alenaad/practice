@@ -4,29 +4,38 @@ import java.util.*;
 
 class Main {
 
-  public static void main(String[] args) throws IOException {
-    Institution institution = new Institution("СПТ", "г. Саранск");
+ public static void main(String[] args) {
+ Institution institution = new Institution("СПТ", "г. Саранск");
     
-    Files.readAllLines(Paths.get("res/students.txt"), UTF_8)
-      .forEach(s -> institution.addStudent(new Student(s)));
-      
-    Files.readAllLines(Paths.get("res/lecturers.txt"), UTF_8)
-      .forEach(l -> institution.addLecturer(new Lecturer(l)));
-      
-    Files.readAllLines(Paths.get("res/courses.txt"), UTF_8)
-      .forEach(c -> institution.addCourse(new Course(c)));
-      
-      System.out.println("\nсписок студентов:");
-      institution.getStudents().forEach(System.out::println);
-      System.out.println("\nсписок преподавателей:");
-      institution.getLecturers().forEach(System.out::println);
-      System.out.println("\nсписок предметов:");
-      institution.getCourses().forEach(System.out::println);
-      
-      institution.getStudents().forEach(s -> institution.studentForCourseAssociate(s, institution.getCourse(11)));
-      
-      System.out.println("\nКол-во студентов, изучающих курс литературы: ");
-      System.out.println(institution.getCourse(11).getStudents().size());
+ institution.addCourse(new Course("ИЗО"));
+ institution.addCourse(new Course("Русский язык"));
+ institution.addCourse(new Course("Математика"));
+
+ institution.addLecturer(new Lecturer("Руссичка"));
+ institution.addLecturer(new Lecturer("Математик"));
+ institution.addLecturer(new Lecturer("Руссичка Фёдоровна Наталия Леонидова"));
+
+ institution.addStudent(new Student("Аверкин Антон Иванович"));
+ institution.addStudent(new Student("Магомедов Пётр Русланович"));
+ institution.addStudent(new Student("Михайлов Алексей Владимирович"));
+
+ for( int i =  1; i <  4; i++) { 
+ new LecturerForCourseAssigner(institution.getLecturer(i), institution.getCourse(i)).assign();
+ for( int j =  1; j <  4; j++) { 
+ new StudentForCourseAssigner(institution.getStudent(j), institution.getCourse(i)).assign();
+ }
+ }
+
+ Student s =  institution.getStudent(1);
+ System.out.println();
+ System.out.println(s.getName() + " изучает предметы:");
+ s.getCourses().forEach(c - > >  System.out.println(c.getName()));
+
+ System.out.println("\nпредмет " + institution.getCourse(1 ) .getName() + " изучают:\n");
+ institution.getCourse(1 ) .getStudents().forEach(st - > >  System.out.println(st.getName()));
+ 
+ System.out.println("\nпредмет " + institution.getCourse(3 ) .getName() + " ведёт:");
+ System.out.println(institution.getCourse(3 ) .getLecturer().getName());
   }
   
 }
