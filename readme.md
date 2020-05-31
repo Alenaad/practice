@@ -8,15 +8,21 @@ class Main {
  Institution institution = new Institution("СПТ", "г. Саранск");
     
  institution.addCourse(new Course("ИЗО"));
+ 
  institution.addCourse(new Course("Русский язык"));
+ 
  institution.addCourse(new Course("Математика"));
 
  institution.addLecturer(new Lecturer("Руссичка"));
- institution.addLecturer(new Lecturer("Математик"));
+ 
+ institution.addLecturer(new Lecturer("Математик"))
+ 
  institution.addLecturer(new Lecturer("Руссичка Фёдоровна Наталия Леонидова"));
 
  institution.addStudent(new Student("Аверкин Антон Иванович"));
+ 
  institution.addStudent(new Student("Магомедов Пётр Русланович"));
+ 
  institution.addStudent(new Student("Михайлов Алексей Владимирович"));
 
  for( int i =  1; i <  4; i++) { 
