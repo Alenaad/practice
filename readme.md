@@ -28,4 +28,5 @@ class Main {
       System.out.println("\nКол-во студентов, изучающих курс литературы: ");
       System.out.println(institution.getCourse(11).getStudents().size());
   }
+  
 }
