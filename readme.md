@@ -39,3 +39,5 @@ class Main {
   }
   
 }
+
+[Выполнить программу](https://SleepyForestgreenDimension.aduskinaalena.repl.run)
